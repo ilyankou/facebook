@@ -1,3 +1,14 @@
+body {
+  font-family: Arial;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#posts ul {
+  margin: 10px 0 20px 0;
+}
+
 #posts li {
   margin-bottom: 10px;
 }
