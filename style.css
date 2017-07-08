@@ -6,9 +6,23 @@ body {
 }
 
 #posts ul {
-  margin: 10px 0 20px 0;
+  margin-top: 10px;
+  padding-top: 10px;
 }
 
 #posts li {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+#posts > li {
+  margin-bottom: 25px;
+}
+
+#posts > li > ul {
+  border-top: 2px solid black;
+}
+
+#posts {
+  list-style-type: none;
+  margin-left: 0;
 }

@@ -12,11 +12,10 @@ function addComments(id) {
         console.log(comments[i])
         $('ul.' + id).append(
           '<li> \
-            <i>{0}</i> <br> \
-            <i>{1} ({2}):</i> <br> \
+            <i>{1} ({2}) on {0}:</i> <br> \
             {3} \
             <ul class="{4}"></ul> \
-          </li>'.format(comments[i].created_time, comments[i].from.name, comments[i].from.id, comments[i].message, comments[i].id));
+          </li>'.format(moment(comments[i].created_time).format('LLL'), comments[i].from.name, comments[i].from.id, comments[i].message, comments[i].id));
 
         addComments(comments[i].id);
       }
@@ -33,11 +32,11 @@ $.ajax({
     for (i in posts) {
       $('#posts').append(
         '<li><b> \
-          {0} <br> \
+          <i>{0}</i> <br> \
           {1} </b> \
           <ul class="{2}"></ul> \
         </li>'
-        .format(posts[i].created_time, posts[i].message, posts[i].id));
+        .format(moment(posts[i].created_time).format('LLL'), posts[i].message, posts[i].id));
 
       addComments(posts[i].id);
     }
