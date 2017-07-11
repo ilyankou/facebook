@@ -28,8 +28,32 @@
        }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <script src="format.js"></script>
+    <script src="string-format.js"></script>
+    <script src="download-csv.js"></script>
     <script src="main.js"></script>
+
+    <div id="intro">
+      <p>
+        It may take some time to load all comments. Wait patiently. <br>
+      </p>
+      <p>
+        You can save this page as an HTML (depends on your browser, but usually File &rarr; Save As),
+        or PDF (with either File &rarr; Save As, or Print &rarr; Save as PDF).
+      </p>
+      <p>
+        You can also <a href="#" onclick='downloadCSV({ filename: "data.csv" });'>download the CSV</a>
+        of the page. The file will contain the following columns:
+        <ul>
+          <li><span>object_id</span> (unique ID assigned by Facebook),</li>
+          <li><span>parent_id</span> (for first-level comments these will be post IDs, for second-level comments - the respective first level comments, etc.),
+          <li><span>timestamp</span> (when the object was created, or posted),
+          <li><span>from_name</span> (who posted),
+          <li><span>from_id</span> (the id of the page that posted),
+          <li><span>type</span> ('comment' or 'post'),
+          <li><span>contents</span>.
+        </ul>
+      </p>
+    </div>
 
     <ul id="posts">
     </ul>
